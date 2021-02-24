@@ -1,0 +1,58 @@
+
+CREATE DATABASE DB201241;
+
+USE DB201241;
+CREATE TABLE DUEÑO
+(
+Id_Dueño int not null primary key auto_increment,
+Nombre_Dueño varchar(50),
+Direccion varchar(50),
+Num_Telefono integer not null
+);
+
+USE DB201241;
+CREATE TABLE MASCOTA
+(
+Id_Mascota int not null primary key auto_increment,
+Caracteristica varchar(50) not null,
+Nombre_Mascota varchar(50) not null,
+Ingreso varchar(50) not null,
+Motivo_cita varchar(50) not null,
+Id_Dueño integer not null
+);
+
+USE DB201241;
+CREATE TABLE CITA
+(
+Id_Cita int not null primary key auto_increment,
+Fecha varchar(50) not null,
+Hora varchar(50) not null,
+Servicio varchar(50) not null,
+Id_Mascota integer not null
+);
+
+USE DB201241;
+CREATE TABLE INVENTARIO
+( 
+Id_Medicamentos int not null primary key auto_increment,
+Nombre_Medicamento varchar(50) not null,
+Sustancia_Activa varchar(50) not null,
+FechaCaducidad varchar(50) not null
+);
+
+USE DB201241;
+CREATE TABLE TIPOMASCOTA
+(
+Id_Tipo int not null primary key auto_increment,
+Nombre varchar(50) not null,
+Direccion varchar(50) not null,
+Telefono varchar(50) not null
+);
+
+USE DB201241;
+CREATE TABLE SERVICIO
+(
+Id_Servicio int not null primary key auto_increment,
+NombreSer varchar(50) not null,
+Susteancia_Activa varchar(50) not null
+)
