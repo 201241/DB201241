@@ -16,6 +16,7 @@
 		<mapping class="simplehibernate.Cita" />
 		<mapping class="simplehibernate.Cliente" />
 		<mapping class="simplehibernate.Mascota" />
+		<mapping class="simplehibernate.Inventario" />
 
 	</session-factory>
 </hibernate-configuration>

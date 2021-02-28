@@ -20,6 +20,23 @@ public class DAOCita {
     private static SessionFactory factory;
     private static ServiceRegistry serviceRegistry;
 
+
+    public DAOCita(){
+        try{
+            Configuration configuration = new Configuration();
+            System.err.println("Leyendo configuracion." );
+            configuration.configure("hibernateMysql.cfg.xml");
+            serviceRegistry = new ServiceRegistryBuilder().applySettings(configuration.getProperties()).buildServiceRegistry();
+            factory = configuration.buildSessionFactory(serviceRegistry);
+            System.out.println("Conectado a base de datos... yea");
+        }catch (Throwable ex) {
+            System.err.println("No se puede crear la Sesion" + ex);
+            System.out.println("No conectado a base de datos...");
+            throw new ExceptionInInitializerError(ex);
+        }
+    }
+
+
     SessionFactory session;
 
     public SessionFactory getSession(){
@@ -37,6 +54,7 @@ public class DAOCita {
         //Transaction tr = null;
         List<Cita> lista = null;
         try{
+            System.out.println("Conectado a base de datos...");
             //session1 = getSession().openSession();
             //tr = session1.beginTransaction();
             //tr.setTimeout(2);
@@ -100,18 +118,6 @@ public class DAOCita {
 
     }
 
-    public DAOCita(String dato){
-        try{
-            Configuration configuration = new Configuration();
-            System.err.println("Leyendo configuracion." );
-            configuration.configure(dato);
-            serviceRegistry = new ServiceRegistryBuilder().applySettings(configuration.getProperties()).buildServiceRegistry();
-            factory = configuration.buildSessionFactory(serviceRegistry);
-        }catch (Throwable ex) {
-            System.err.println("No se puede crear la Sesion" + ex);
-            throw new ExceptionInInitializerError(ex);
-        }
-    }
 
         public Integer addCita(String nombre, String sexo, int edad, int idCiudad){
         Session session = factory.openSession();
@@ -132,7 +138,7 @@ public class DAOCita {
     }
 
         /* Borra cita */
-    public void deleteAlumno(Integer AlumnoID){
+        public void deleteAlumno(Integer AlumnoID){
         Session session = factory.openSession();
         Transaction tx = null;
         try{

@@ -1,8 +1,15 @@
-<?import javafx.geometry.Insets?>
-<?import javafx.scene.layout.GridPane?>
+<?xml version="1.0" encoding="UTF-8"?>
 
 <?import javafx.scene.control.Button?>
-<?import javafx.scene.control.Label?>
-<GridPane fx:controller="sample.Controller"
-          xmlns:fx="http://javafx.com/fxml" alignment="center" hgap="10" vgap="10">
-</GridPane>
+<?import javafx.scene.layout.Pane?>
+
+<Pane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="400.0" prefWidth="600.0" xmlns="http://javafx.com/javafx/11.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="sample.Controller">
+   <children>
+      <Pane prefHeight="71.0" prefWidth="600.0" style="-fx-background-color: orange;" />
+      <Pane layoutY="70.0" prefHeight="337.0" prefWidth="600.0" style="-fx-background-color: black;">
+         <children>
+            <Button fx:id="iniciar" layoutX="14.0" layoutY="31.0" mnemonicParsing="false" onAction="#iniciarMySql" text="Iniciar" />
+         </children>
+      </Pane>
+   </children>
+</Pane>
