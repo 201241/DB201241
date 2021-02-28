@@ -12,9 +12,144 @@ import javax.persistence.Persistence;
 import javax.persistence.criteria.CriteriaBuilder;
 import javax.persistence.criteria.CriteriaQuery;
 import javax.persistence.criteria.Root;
+import java.util.Iterator;
 import java.util.List;
 
 public class DAOCita {
+
+    private static SessionFactory factory;
+    private static ServiceRegistry serviceRegistry;
+
+    SessionFactory session;
+
+    public SessionFactory getSession(){
+        setSession();
+        return  session;
+    }
+
+    public void setSession(){
+        this.session = new Configuration().configure().buildSessionFactory();
+    }
+
+        public List<Cita> Listado(){
+        Session session1 = factory.openSession();
+        Criteria criter = session1.createCriteria(Cita.class);
+        //Transaction tr = null;
+        List<Cita> lista = null;
+        try{
+            //session1 = getSession().openSession();
+            //tr = session1.beginTransaction();
+            //tr.setTimeout(2);
+            //lista = session1.createCriteria(alumno.class).list();
+            lista = criter.list();
+            for(Cita cita: lista){
+                System.out.print("  Fecha: "+cita.getFecha());
+                System.out.print("  Hora: "+cita.getHora());
+                System.out.print("  Servicio: "+cita.getServicio());
+                System.out.println("");
+            }
+        } catch (Exception e){
+            e.printStackTrace();
+        } finally {
+            if(session1.isOpen()){
+                session1.close();
+            }
+        }
+        return lista;
+    }
+
+        public List<Cita> Buscar(int ciudad){
+
+        System.out.println("id ciudad en buscar DAOalum: "+ ciudad);
+        System.out.print("Buscar listas");
+
+        Session session = factory.openSession();
+        Criteria cr = session.createCriteria(Cita.class);
+        System.out.print("Buscar listas 2");
+        cr.add(Restrictions.eq("idCiudad", ciudad));
+        List results = cr.list();
+
+        System.out.print("Buscar listas final");
+
+/*		Session session1 = factory.openSession();
+		Criteria crit = session1.createCriteria(alumno.class).add(Restrictions.eq("idCiudad", 1));
+		//Transaction tr = null;
+		List<alumno> lista = null;
+		try{
+			//session1 = getSession().openSession();
+			//tr = session1.beginTransaction();
+			//tr.setTimeout(2);
+			lista = crit.list();
+			//lista = session1.createCriteria(alumno.class).add(Restrictions.like("nombre", letra+"%")).list();
+
+			for(alumno alum: lista){
+				System.out.print("  nombre: "+alum.getNombre());
+				System.out.print("  sexo: "+alum.getSexo());
+				System.out.print("  edad: "+alum.getEdad());
+				System.out.println("");
+			}
+
+		} catch (Exception e){
+			e.printStackTrace();
+		} finally {
+			if(session1.isOpen()){
+				session1.close();
+			}
+		}*/
+        return results;
+
+    }
+
+    public DAOCita(String dato){
+        try{
+            Configuration configuration = new Configuration();
+            System.err.println("Leyendo configuracion." );
+            configuration.configure(dato);
+            serviceRegistry = new ServiceRegistryBuilder().applySettings(configuration.getProperties()).buildServiceRegistry();
+            factory = configuration.buildSessionFactory(serviceRegistry);
+        }catch (Throwable ex) {
+            System.err.println("No se puede crear la Sesion" + ex);
+            throw new ExceptionInInitializerError(ex);
+        }
+    }
+
+        public Integer addCita(String nombre, String sexo, int edad, int idCiudad){
+        Session session = factory.openSession();
+        Transaction tx = null;
+        Integer daoID = null;
+        try{
+            tx = session.beginTransaction();
+            Cita dao = new Cita(nombre, sexo, edad, idCiudad);
+            daoID = (Integer) session.save(dao);
+            tx.commit();
+        }catch (HibernateException e) {
+            if (tx!=null) tx.rollback();
+            e.printStackTrace();
+        }finally {
+            session.close();
+        }
+        return daoID;
+    }
+
+        /* Borra cita */
+    public void deleteAlumno(Integer AlumnoID){
+        Session session = factory.openSession();
+        Transaction tx = null;
+        try{
+            tx = session.beginTransaction();
+            Cita dao =
+                    (Cita)session.get(Cita.class, AlumnoID);
+            ((org.hibernate.Session) session).delete(dao);
+            tx.commit();
+        }catch (HibernateException e) {
+            if (tx!=null) tx.rollback();
+            e.printStackTrace();
+        }finally {
+            session.close();
+        }
+    }
+
+
 }
 
 
