@@ -1,5 +1,5 @@
 package simplehibernate;
-
+//
 import org.hibernate.*;
 import org.hibernate.cfg.Configuration;
 import org.hibernate.criterion.Restrictions;
