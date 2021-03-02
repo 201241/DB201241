@@ -48,11 +48,11 @@ public class DAOCita {
         this.session = new Configuration().configure().buildSessionFactory();
     }
 
-        public List<Cita> Listado(){
+        public List<cita> Listado(){
         Session session1 = factory.openSession();
-        Criteria criter = session1.createCriteria(Cita.class);
+        Criteria criter = session1.createCriteria(cita.class);
         //Transaction tr = null;
-        List<Cita> lista = null;
+        List<cita> lista = null;
         try{
             System.out.println("Conectado a base de datos...");
             //session1 = getSession().openSession();
@@ -60,7 +60,7 @@ public class DAOCita {
             //tr.setTimeout(2);
             //lista = session1.createCriteria(alumno.class).list();
             lista = criter.list();
-            for(Cita cita: lista){
+            for(cita cita: lista){
                 System.out.print("  Fecha: "+cita.getFecha());
                 System.out.print("  Hora: "+cita.getHora());
                 System.out.print("  Servicio: "+cita.getServicio());
@@ -76,13 +76,13 @@ public class DAOCita {
         return lista;
     }
 
-        public List<Cita> Buscar(int ciudad){
+        public List<cita> Buscar(int ciudad){
 
         System.out.println("id ciudad en buscar DAOalum: "+ ciudad);
         System.out.print("Buscar listas");
 
         Session session = factory.openSession();
-        Criteria cr = session.createCriteria(Cita.class);
+        Criteria cr = session.createCriteria(cita.class);
         System.out.print("Buscar listas 2");
         cr.add(Restrictions.eq("idCiudad", ciudad));
         List results = cr.list();
@@ -119,13 +119,13 @@ public class DAOCita {
     }
 
 
-        public Integer addCita(String nombre, String sexo, int edad, int idCiudad){
+        public Integer addCita(String Fecha, String Hora, String Servicio, int Id_Mascota){
         Session session = factory.openSession();
         Transaction tx = null;
         Integer daoID = null;
         try{
             tx = session.beginTransaction();
-            Cita dao = new Cita(nombre, sexo, edad, idCiudad);
+            cita dao = new cita(Fecha, Hora, Servicio, Id_Mascota);
             daoID = (Integer) session.save(dao);
             tx.commit();
         }catch (HibernateException e) {
@@ -138,13 +138,13 @@ public class DAOCita {
     }
 
         /* Borra cita */
-        public void deleteAlumno(Integer AlumnoID){
+        public void deleteCita(Integer idCita){
         Session session = factory.openSession();
         Transaction tx = null;
         try{
             tx = session.beginTransaction();
-            Cita dao =
-                    (Cita)session.get(Cita.class, AlumnoID);
+            cita dao =
+                    (cita)session.get(cita.class, idCita);
             ((org.hibernate.Session) session).delete(dao);
             tx.commit();
         }catch (HibernateException e) {

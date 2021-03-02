@@ -1,0 +1,35 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="DataSourceManagerImpl" format="xml" multifile-model="true">
+    <data-source source="LOCAL" name="hibernatePost.cfg.xml/Hibernate" uuid="77b93cb5-8ede-46ee-abd5-5f7a045abc63">
+      <driver-ref>postgresql</driver-ref>
+      <synchronize>true</synchronize>
+      <imported>true</imported>
+      <remarks>Hibernate
+
+C:/Users/elian/OneDrive/Documentos/Base de datos/veterinario/BD201241/BD201241/src/hibernatePost.cfg.xml</remarks>
+      <jdbc-driver>org.postgresql.Driver</jdbc-driver>
+      <jdbc-url>jdbc:postgresql://localhost:5432/tarea_hibernate</jdbc-url>
+    </data-source>
+    <data-source source="LOCAL" name="hibernateMysql.cfg.xml/Hibernate" uuid="a2e9fcf7-bf7d-4578-a43c-f4c9d4257784">
+      <driver-ref>mysql.8</driver-ref>
+      <synchronize>true</synchronize>
+      <imported>true</imported>
+      <remarks>Hibernate
+
+C:/Users/elian/OneDrive/Documentos/Base de datos/veterinario/BD201241/BD201241/src/hibernateMysql.cfg.xml</remarks>
+      <jdbc-driver>com.mysql.cj.jdbc.Driver</jdbc-driver>
+      <jdbc-url>jdbc:mysql://localhost:3306/db201241?serverTimezone=UTC</jdbc-url>
+    </data-source>
+    <data-source source="LOCAL" name="hibernateServer.cfg.xml/Hibernate" uuid="75cb718f-f2c1-497a-98f8-8e8711559b33">
+      <driver-ref>sqlserver.ms</driver-ref>
+      <synchronize>true</synchronize>
+      <imported>true</imported>
+      <remarks>Hibernate
+
+C:/Users/elian/OneDrive/Documentos/Base de datos/veterinario/BD201241/BD201241/src/hibernateServer.cfg.xml</remarks>
+      <jdbc-driver>com.microsoft.sqlserver.jdbc.SQLServerDriver</jdbc-driver>
+      <jdbc-url>jdbc:sqlserver://localhost:1433;databaseName=tarea_hibernate</jdbc-url>
+    </data-source>
+  </component>
+</project>

@@ -1,11 +1,18 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="887c1e89-94f4-496c-981c-a110b7acb972" name="Default Changelist" comment="" />
+    <list default="true" id="887c1e89-94f4-496c-981c-a110b7acb972" name="Default Changelist" comment="">
+      <change beforePath="$PROJECT_DIR$/BD201241/src/hibernateMysql.cfg.xml" beforeDir="false" afterPath="$PROJECT_DIR$/BD201241/src/hibernateMysql.cfg.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/BD201241/src/simplehibernate/Cita.java" beforeDir="false" afterPath="$PROJECT_DIR$/BD201241/src/simplehibernate/cita.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/BD201241/src/simplehibernate/DAOCita.java" beforeDir="false" afterPath="$PROJECT_DIR$/BD201241/src/simplehibernate/DAOCita.java" afterDir="false" />
+    </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
     <option name="LAST_RESOLUTION" value="IGNORE" />
+  </component>
+  <component name="Git.Settings">
+    <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
   </component>
   <component name="ProjectId" id="1ow32hpbOdjNyuMd7wJHwOqX4fM" />
   <component name="ProjectViewState">
@@ -16,25 +23,10 @@
     <property name="RunOnceActivity.OpenProjectViewOnStart" value="true" />
     <property name="WebServerToolWindowFactoryState" value="false" />
     <property name="aspect.path.notification.shown" value="true" />
-    <property name="last_opened_file_path" value="$PROJECT_DIR$/../../Actividad en pareja habernate/ProyectoHibernate/SimpleHibernate" />
+    <property name="last_opened_file_path" value="$PROJECT_DIR$" />
     <property name="project.structure.last.edited" value="Project" />
     <property name="project.structure.proportion" value="0.0" />
     <property name="project.structure.side.proportion" value="0.2" />
-  </component>
-  <component name="RunManager">
-    <configuration default="true" type="ArquillianTestNG" factoryName="" nameIsGenerated="true">
-      <option name="arquillianRunConfiguration">
-        <value>
-          <option name="containerStateName" value="" />
-        </value>
-      </option>
-      <option name="TEST_OBJECT" value="CLASS" />
-      <properties />
-      <listeners />
-      <method v="2">
-        <option name="Make" enabled="true" />
-      </method>
-    </configuration>
   </component>
   <component name="SpellCheckerSettings" RuntimeDictionaries="0" Folders="0" CustomDictionaries="0" DefaultDictionary="application-level" UseSingleDictionary="true" transferred="true" />
   <component name="TaskManager">
@@ -46,6 +38,7 @@
       <updated>1614183619989</updated>
       <workItem from="1614183621026" duration="27000" />
       <workItem from="1614183673247" duration="391000" />
+      <workItem from="1614664321260" duration="28000" />
     </task>
     <servers />
   </component>

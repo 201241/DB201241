@@ -4,9 +4,9 @@
     <facet type="hibernate" name="Hibernate">
       <configuration>
         <datasource-map>
-          <unit-entry name="hibernateMysql.cfg.xml" />
-          <unit-entry name="hibernatePost.cfg.xml" />
-          <unit-entry name="hibernateServer.cfg.xml" />
+          <unit-entry name="hibernateMysql.cfg.xml" value="a2e9fcf7-bf7d-4578-a43c-f4c9d4257784" />
+          <unit-entry name="hibernatePost.cfg.xml" value="77b93cb5-8ede-46ee-abd5-5f7a045abc63" />
+          <unit-entry name="hibernateServer.cfg.xml" value="75cb718f-f2c1-497a-98f8-8e8711559b33" />
         </datasource-map>
         <naming-strategy-map />
         <deploymentDescriptor name="hibernate.cfg.xml" url="file://$MODULE_DIR$/src/hibernateMysql.cfg.xml" />
