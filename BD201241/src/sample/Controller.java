@@ -4,6 +4,9 @@ import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
 import javafx.scene.control.Button;
 import simplehibernate.CitaDAO;
+import simplehibernate.Dueño;
+import simplehibernate.DueñoDAO;
+import simplehibernate.MascotaDAO;
 
 public class Controller {
 //
@@ -13,11 +16,15 @@ public class Controller {
     @FXML
     void puebas(ActionEvent e){
         CitaDAO con = new CitaDAO();
+        DueñoDAO dev = new DueñoDAO();
+        MascotaDAO exe =new MascotaDAO();
 
-        System.out.println("Listado___________");
+        System.out.println("Listado____________");
         con.Listado();
-
-//
+        System.out.println("Listado2___________");
+        dev.Listado2();
+        System.out.println("Listado3___________");
+        exe.Listado3();
 //
 //
 //        System.out.println("Agregado___________");
