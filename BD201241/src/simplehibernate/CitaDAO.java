@@ -6,22 +6,15 @@ import org.hibernate.criterion.Restrictions;
 import org.hibernate.service.ServiceRegistry;
 import org.hibernate.service.ServiceRegistryBuilder;
 
-import javax.persistence.EntityManager;
-import javax.persistence.EntityManagerFactory;
-import javax.persistence.Persistence;
-import javax.persistence.criteria.CriteriaBuilder;
-import javax.persistence.criteria.CriteriaQuery;
-import javax.persistence.criteria.Root;
-import java.util.Iterator;
 import java.util.List;
 
-public class DAOCita {
+public class CitaDAO {
 
     private static SessionFactory factory;
     private static ServiceRegistry serviceRegistry;
 
 
-    public DAOCita(){
+    public CitaDAO(){
         try{
             Configuration configuration = new Configuration();
             System.err.println("Leyendo configuracion." );
@@ -48,11 +41,11 @@ public class DAOCita {
         this.session = new Configuration().configure().buildSessionFactory();
     }
 
-        public List<cita> Listado(){
+        public List<Cita> Listado(){
         Session session1 = factory.openSession();
-        Criteria criter = session1.createCriteria(cita.class);
+        Criteria criter = session1.createCriteria(Cita.class);
         //Transaction tr = null;
-        List<cita> lista = null;
+        List<Cita> lista = null;
         try{
             System.out.println("Conectado a base de datos...");
             //session1 = getSession().openSession();
@@ -60,7 +53,7 @@ public class DAOCita {
             //tr.setTimeout(2);
             //lista = session1.createCriteria(alumno.class).list();
             lista = criter.list();
-            for(cita cita: lista){
+            for(Cita cita: lista){
                 System.out.print("  Fecha: "+cita.getFecha());
                 System.out.print("  Hora: "+cita.getHora());
                 System.out.print("  Servicio: "+cita.getServicio());
@@ -76,13 +69,13 @@ public class DAOCita {
         return lista;
     }
 
-        public List<cita> Buscar(int ciudad){
+        public List<Cita> Buscar(int ciudad){
 
         System.out.println("id ciudad en buscar DAOalum: "+ ciudad);
         System.out.print("Buscar listas");
 
         Session session = factory.openSession();
-        Criteria cr = session.createCriteria(cita.class);
+        Criteria cr = session.createCriteria(Cita.class);
         System.out.print("Buscar listas 2");
         cr.add(Restrictions.eq("idCiudad", ciudad));
         List results = cr.list();
@@ -125,7 +118,7 @@ public class DAOCita {
         Integer daoID = null;
         try{
             tx = session.beginTransaction();
-            cita dao = new cita(Fecha, Hora, Servicio, Id_Mascota);
+            Cita dao = new Cita(Fecha, Hora, Servicio, Id_Mascota);
             daoID = (Integer) session.save(dao);
             tx.commit();
         }catch (HibernateException e) {
@@ -143,8 +136,8 @@ public class DAOCita {
         Transaction tx = null;
         try{
             tx = session.beginTransaction();
-            cita dao =
-                    (cita)session.get(cita.class, idCita);
+            Cita dao =
+                    (Cita)session.get(Cita.class, idCita);
             ((org.hibernate.Session) session).delete(dao);
             tx.commit();
         }catch (HibernateException e) {

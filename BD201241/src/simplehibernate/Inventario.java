@@ -3,5 +3,7 @@ import javax.persistence.*;
 
 public class Inventario {
 
-    //Inventario
+    public Inventario(){
+
+    }
 }

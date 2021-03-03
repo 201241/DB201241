@@ -5,7 +5,7 @@ import javax.persistence.*;
 
 @Entity
 @Table(name = "cita")
-public class cita{
+public class Cita {
 
     @Id
     @GeneratedValue
@@ -24,7 +24,7 @@ public class cita{
     @Column(name = "Id_Mascota")
     private int id_Mascota;
 
-    public cita(String Fecha, String Hora, String Servicio, int Id_Mascota){
+    public Cita(String Fecha, String Hora, String Servicio, int Id_Mascota){
         this.fecha=Fecha;
         this.hora=Hora;
         this.servicio=Servicio;
@@ -32,7 +32,7 @@ public class cita{
 
     }
 
-    public cita() {
+    public Cita() {
 
     }
 

@@ -1,4 +1,4 @@
 package simplehibernate;
 
-public class DAOCliente {
+public class DueñoDAO {
 }

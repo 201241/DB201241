@@ -13,7 +13,7 @@
 		<property name="dialect">org.hibernate.dialect.SQLServerDialect</property>
 		<property name="hibernate.current_session_context_class">thread</property>
 
-		<mapping class="simplehibernate.cita" />
+		<mapping class="simplehibernate.Cita" />
 		<mapping class="simplehibernate.Dueño" />
 		<mapping class="simplehibernate.Mascota" />
 		<mapping class="simplehibernate.Inventario" />

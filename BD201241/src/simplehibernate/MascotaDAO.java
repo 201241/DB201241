@@ -1,4 +1,4 @@
 package simplehibernate;
 
-public class DAOMascota {
+public class MascotaDAO {
 }
