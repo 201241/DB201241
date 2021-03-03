@@ -7,7 +7,7 @@ import org.hibernate.service.ServiceRegistry;
 import org.hibernate.service.ServiceRegistryBuilder;
 
 import java.util.List;
-
+///
 public class MascotaDAO {
 
     private static SessionFactory factory;
