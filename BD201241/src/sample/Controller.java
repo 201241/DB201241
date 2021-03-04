@@ -4,7 +4,6 @@ import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
 import javafx.scene.control.Button;
 import simplehibernate.CitaDAO;
-import simplehibernate.Dueño;
 import simplehibernate.DueñoDAO;
 import simplehibernate.MascotaDAO;
 
@@ -19,11 +18,11 @@ public class Controller {
         DueñoDAO dev = new DueñoDAO();
         MascotaDAO exe =new MascotaDAO();
 
-        System.out.println("Listado____________");
+        System.out.println("Listado____________Tabla cita");
         con.Listado();
-        System.out.println("Listado2___________");
+        System.out.println("Listado2___________Tabla dueño");
         dev.Listado2();
-        System.out.println("Listado3___________");
+        System.out.println("Listado3___________Tabla mascota");
         exe.Listado3();
 //
 //

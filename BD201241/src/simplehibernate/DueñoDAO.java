@@ -42,7 +42,7 @@ public class DueñoDAO {
 
         public List<Dueño>Listado2(){
             Session session1 = factory.openSession();
-            Criteria criter = session1.createCriteria(Cita.class);
+            Criteria criter = session1.createCriteria(Dueño.class);
             //Transaction tr = null;
             List<Dueño> lista2 = null;
             try{
@@ -54,7 +54,7 @@ public class DueñoDAO {
                 lista2 = criter.list();
                 for(Dueño dueño: lista2){
                     System.out.print("  Nombre del dueño: "+dueño.getNombreDueño());
-                    System.out.print("  Direccion: "+dueño.getDireccion());
+                    System.out.print("  DireccionD: "+dueño.getDireccion());
                     System.out.print("  Num_Telefono: "+dueño.getNumTel());
                     System.out.println("");
                 }

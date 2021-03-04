@@ -42,7 +42,7 @@ public class MascotaDAO {
 
     public List<Mascota>Listado3(){
         Session session1 = factory.openSession();
-        Criteria criter = session1.createCriteria(Cita.class);
+        Criteria criter = session1.createCriteria(Mascota.class);
         //Transaction tr = null;
         List<Mascota>lista3 = null;
         try{

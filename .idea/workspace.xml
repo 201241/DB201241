@@ -19,9 +19,8 @@
     <select />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="887c1e89-94f4-496c-981c-a110b7acb972" name="Default Changelist" comment="">
+    <list default="true" id="887c1e89-94f4-496c-981c-a110b7acb972" name="Default Changelist" comment="avence dueño,dueñoDAO y mascota,mascotaDAO">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/BD201241/src/hibernateMysql.cfg.xml" beforeDir="false" afterPath="$PROJECT_DIR$/BD201241/src/hibernateMysql.cfg.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/BD201241/src/sample/Controller.java" beforeDir="false" afterPath="$PROJECT_DIR$/BD201241/src/sample/Controller.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/BD201241/src/simplehibernate/DueñoDAO.java" beforeDir="false" afterPath="$PROJECT_DIR$/BD201241/src/simplehibernate/DueñoDAO.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/BD201241/src/simplehibernate/MascotaDAO.java" beforeDir="false" afterPath="$PROJECT_DIR$/BD201241/src/simplehibernate/MascotaDAO.java" afterDir="false" />
@@ -44,10 +43,20 @@
     <property name="RunOnceActivity.OpenProjectViewOnStart" value="true" />
     <property name="WebServerToolWindowFactoryState" value="false" />
     <property name="aspect.path.notification.shown" value="true" />
-    <property name="last_opened_file_path" value="$PROJECT_DIR$/../HibernateCoreJava/hibernateJarFiles/required" />
+    <property name="last_opened_file_path" value="$PROJECT_DIR$/../../trabajo/mysql-connector-java-8.0.22.jar" />
     <property name="project.structure.last.edited" value="Libraries" />
     <property name="project.structure.proportion" value="0.15" />
     <property name="project.structure.side.proportion" value="0.2" />
+  </component>
+  <component name="RunManager">
+    <configuration name="Unnamed" type="Application" factoryName="Application" nameIsGenerated="true">
+      <option name="MAIN_CLASS_NAME" value="sample.Main" />
+      <module name="DB201241" />
+      <option name="VM_PARAMETERS" value="--module-path ${PATH_TO_FX} --add-modules javafx.controls,javafx.fxml " />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
   </component>
   <component name="SpellCheckerSettings" RuntimeDictionaries="0" Folders="0" CustomDictionaries="0" DefaultDictionary="application-level" UseSingleDictionary="true" transferred="true" />
   <component name="TaskManager">
@@ -61,6 +70,21 @@
       <workItem from="1614183673247" duration="391000" />
       <workItem from="1614664321260" duration="28000" />
     </task>
+    <task id="LOCAL-00001" summary="avence dueño,dueñoDAO y mascota,mascotaDAO">
+      <created>1614751535100</created>
+      <option name="number" value="00001" />
+      <option name="presentableId" value="LOCAL-00001" />
+      <option name="project" value="LOCAL" />
+      <updated>1614751535100</updated>
+    </task>
+    <task id="LOCAL-00002" summary="avence dueño,dueñoDAO y mascota,mascotaDAO">
+      <created>1614751979038</created>
+      <option name="number" value="00002" />
+      <option name="presentableId" value="LOCAL-00002" />
+      <option name="project" value="LOCAL" />
+      <updated>1614751979038</updated>
+    </task>
+    <option name="localTasksCounter" value="3" />
     <servers />
   </component>
   <component name="Vcs.Log.Tabs.Properties">
@@ -73,21 +97,55 @@
         </entry>
       </map>
     </option>
+    <option name="oldMeFiltersMigrated" value="true" />
+  </component>
+  <component name="VcsManagerConfiguration">
+    <MESSAGE value="avence dueño,dueñoDAO y mascota,mascotaDAO" />
+    <option name="LAST_COMMIT_MESSAGE" value="avence dueño,dueñoDAO y mascota,mascotaDAO" />
   </component>
   <component name="WindowStateProjectService">
-    <state x="160" y="0" key="#Project_Structure" timestamp="1614183630447">
-      <screen x="0" y="0" width="1360" height="768" />
+    <state x="73" y="0" key="#Project_Structure" timestamp="1614784726442">
+      <screen x="0" y="0" width="1366" height="736" />
     </state>
     <state x="160" y="0" key="#Project_Structure/0.0.1360.768@0.0.1360.768" timestamp="1614183630447" />
-    <state x="462" y="133" key="FileChooserDialogImpl" timestamp="1614738647901">
+    <state x="73" y="0" key="#Project_Structure/0.0.1366.736@0.0.1366.736" timestamp="1614784726442" />
+    <state x="137" y="21" width="1092" height="715" key="#com.intellij.execution.impl.EditConfigurationsDialog" timestamp="1614784732936">
+      <screen x="0" y="0" width="1366" height="736" />
+    </state>
+    <state x="137" y="21" width="1092" height="715" key="#com.intellij.execution.impl.EditConfigurationsDialog/0.0.1366.736@0.0.1366.736" timestamp="1614784732936" />
+    <state x="412" y="168" key="#com.intellij.ide.util.TreeClassChooserDialog" timestamp="1614784191645">
+      <screen x="0" y="0" width="1366" height="736" />
+    </state>
+    <state x="412" y="168" key="#com.intellij.ide.util.TreeClassChooserDialog/0.0.1366.736@0.0.1366.736" timestamp="1614784191645" />
+    <state x="319" y="15" width="649" height="554" key="FileChooserDialogImpl" timestamp="1614786653092">
       <screen x="0" y="0" width="1366" height="736" />
     </state>
     <state x="460" y="139" key="FileChooserDialogImpl/0.0.1360.768@0.0.1360.768" timestamp="1614183935803" />
-    <state x="462" y="133" key="FileChooserDialogImpl/0.0.1366.736@0.0.1366.736" timestamp="1614738647901" />
-    <state x="163" y="0" key="SettingsEditor" timestamp="1614738651427">
+    <state x="319" y="15" width="649" height="554" key="FileChooserDialogImpl/0.0.1366.736@0.0.1366.736" timestamp="1614786653092" />
+    <state width="1323" height="578" key="GridCell.Tab.0.bottom" timestamp="1614833767881">
       <screen x="0" y="0" width="1366" height="736" />
     </state>
-    <state x="163" y="0" key="SettingsEditor/0.0.1366.736@0.0.1366.736" timestamp="1614738651427" />
+    <state width="1323" height="578" key="GridCell.Tab.0.bottom/0.0.1366.736@0.0.1366.736" timestamp="1614833767881" />
+    <state width="1323" height="578" key="GridCell.Tab.0.center" timestamp="1614833767881">
+      <screen x="0" y="0" width="1366" height="736" />
+    </state>
+    <state width="1323" height="578" key="GridCell.Tab.0.center/0.0.1366.736@0.0.1366.736" timestamp="1614833767881" />
+    <state width="1323" height="578" key="GridCell.Tab.0.left" timestamp="1614833767881">
+      <screen x="0" y="0" width="1366" height="736" />
+    </state>
+    <state width="1323" height="578" key="GridCell.Tab.0.left/0.0.1366.736@0.0.1366.736" timestamp="1614833767881" />
+    <state width="1323" height="578" key="GridCell.Tab.0.right" timestamp="1614833767881">
+      <screen x="0" y="0" width="1366" height="736" />
+    </state>
+    <state width="1323" height="578" key="GridCell.Tab.0.right/0.0.1366.736@0.0.1366.736" timestamp="1614833767881" />
+    <state x="163" y="0" key="SettingsEditor" timestamp="1614786656636">
+      <screen x="0" y="0" width="1366" height="736" />
+    </state>
+    <state x="163" y="0" key="SettingsEditor/0.0.1366.736@0.0.1366.736" timestamp="1614786656636" />
+    <state x="275" y="100" key="Vcs.Push.Dialog.v2" timestamp="1614752008030">
+      <screen x="0" y="0" width="1366" height="736" />
+    </state>
+    <state x="275" y="100" key="Vcs.Push.Dialog.v2/0.0.1366.736@0.0.1366.736" timestamp="1614752008030" />
     <state x="353" y="146" key="com.intellij.openapi.vcs.update.UpdateOrStatusOptionsDialogupdate-v2" timestamp="1614738758182">
       <screen x="0" y="0" width="1366" height="736" />
     </state>
@@ -96,6 +154,10 @@
       <screen x="0" y="0" width="1360" height="768" />
     </state>
     <state x="62" y="45" key="new project wizard/0.0.1360.768@0.0.1360.768" timestamp="1614183939255" />
+    <state x="339" y="164" key="run.anything.popup" timestamp="1614786753321">
+      <screen x="0" y="0" width="1366" height="736" />
+    </state>
+    <state x="339" y="164" key="run.anything.popup/0.0.1366.736@0.0.1366.736" timestamp="1614786753321" />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>
