@@ -41,6 +41,12 @@ public class Controller {
 //        con.deleteCita(2);
 //        System.out.println("Listado delete___________");
 //        con.Listado();
+
+
+        //con.addCita("03/13","10:20","Baño",2);
+        //con.deleteCita(4);
+        //con.Listado();
+        //con.updateCita(6,"09/04","16:30","Corte de pelo", 4);
     }
 
 

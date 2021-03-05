@@ -11,7 +11,7 @@ public class Mascota {
     @GeneratedValue
     @Column(name = "Id_Mascota")
     private int IdMascota;
-
+//caracteristica NombreMascota Ingreso MotivoCita IdDueño
     @Column(name = "Caracteristica")
     private String Caracteristica;
 

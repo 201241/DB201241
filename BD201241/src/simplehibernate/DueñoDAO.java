@@ -68,7 +68,7 @@ public class DueñoDAO {
             return lista2;
         }
 
-        public List<Dueño> Buscar(int ciudad){
+/*        public List<Dueño> Buscar(int ciudad){
 
             System.out.println("id ciudad en buscar DAOalum: "+ ciudad);
             System.out.print("Buscar listas");
@@ -81,7 +81,7 @@ public class DueñoDAO {
 
             System.out.print("Buscar listas final");
 
-/*		Session session1 = factory.openSession();
+		Session session1 = factory.openSession();
 		Criteria crit = session1.createCriteria(alumno.class).add(Restrictions.eq("idCiudad", 1));
 		//Transaction tr = null;
 		List<alumno> lista = null;
@@ -105,10 +105,10 @@ public class DueñoDAO {
 			if(session1.isOpen()){
 				session1.close();
 			}
-		}*/
+		}
             return results2;
 
-        }
+        }*/
 
 
         public Integer addDueño(int IdDueño,String NombreDueño, String Dirreccion, int NumTel){
@@ -146,6 +146,28 @@ public class DueñoDAO {
                 session.close();
             }
         }
+
+    public void updateDueno(Integer idDueño, String nombre, int telefono, String direccion){
+        Session session = factory.openSession();
+        Transaction tx = null;
+        try{
+            tx = session.beginTransaction();
+            Dueño dao =
+                    (Dueño) session.get(Dueño.class, idDueño);
+
+            dao.setNombreDueño(nombre);
+            dao.setNumTel(telefono);
+            dao.setDireccion(direccion);
+
+            session.update(dao);
+            tx.commit();
+        }catch (HibernateException e) {
+            if (tx!=null) tx.rollback();
+            e.printStackTrace();
+        }finally {
+            session.close();
+        }
+    }
 
 
     }

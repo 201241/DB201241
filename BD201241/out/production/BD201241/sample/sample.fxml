@@ -8,7 +8,7 @@
       <Pane prefHeight="71.0" prefWidth="600.0" style="-fx-background-color: orange;" />
       <Pane layoutY="70.0" prefHeight="337.0" prefWidth="600.0" style="-fx-background-color: black;">
          <children>
-            <Button fx:id="iniciar" layoutX="14.0" layoutY="31.0" mnemonicParsing="false" onAction="#puebas" text="Iniciar" />
+            <Button fx:id="iniciar" layoutX="14.0" layoutY="31.0" mnemonicParsing="false" onAction="#puebas" text="test cita" />
          </children>
       </Pane>
    </children>

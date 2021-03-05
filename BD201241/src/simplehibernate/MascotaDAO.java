@@ -69,7 +69,7 @@ public class MascotaDAO {
         return lista3;
     }
 
-    public List<Dueño> Buscar(int ciudad){
+/*    public List<Mascota> Buscar(int ciudad){
 
         System.out.println("id ciudad en buscar DAOalum: "+ ciudad);
         System.out.print("Buscar listas");
@@ -82,7 +82,7 @@ public class MascotaDAO {
 
         System.out.print("Buscar listas final");
 
-/*		Session session1 = factory.openSession();
+		Session session1 = factory.openSession();
 		Criteria crit = session1.createCriteria(alumno.class).add(Restrictions.eq("idCiudad", 1));
 		//Transaction tr = null;
 		List<alumno> lista = null;
@@ -106,10 +106,10 @@ public class MascotaDAO {
 			if(session1.isOpen()){
 				session1.close();
 			}
-		}*/
+		}
         return results3;
 
-    }
+    }*/
 
 
     public Integer addDueño(int idMascota, String caracteristica, String nombreMasc, String ingreso, String motivoCita, int idDueño){
@@ -147,7 +147,31 @@ public class MascotaDAO {
             session.close();
         }
     }
+//caracteristica NombreMascota Ingreso MotivoCita IdDueño
 
+    public void updateMascota(Integer idMascota, String NombreMascota,String caracteristica, String Ingreso, String MotivoCita, int IdDueño){
+        Session session = factory.openSession();
+        Transaction tx = null;
+        try{
+            tx = session.beginTransaction();
+            Mascota dao =
+                    (Mascota) session.get(Mascota.class, idMascota);
+
+            dao.setNombreMascota(NombreMascota);
+            dao.setCaracteristica(caracteristica);
+            dao.setIngreso(Ingreso);
+            dao.setMotivoCita(MotivoCita);
+            dao.setIdDueño(IdDueño);
+
+            session.update(dao);
+            tx.commit();
+        }catch (HibernateException e) {
+            if (tx!=null) tx.rollback();
+            e.printStackTrace();
+        }finally {
+            session.close();
+        }
+    }
 
 }
 

@@ -69,7 +69,7 @@ public class CitaDAO {
         return lista;
     }
 
-        public List<Cita> Buscar(int ciudad){
+/*        public List<Cita> Buscar(int ciudad){
 
         System.out.println("id ciudad en buscar DAOalum: "+ ciudad);
         System.out.print("Buscar listas");
@@ -82,7 +82,7 @@ public class CitaDAO {
 
         System.out.print("Buscar listas final");
 
-/*		Session session1 = factory.openSession();
+*//*		Session session1 = factory.openSession();
 		Criteria crit = session1.createCriteria(alumno.class).add(Restrictions.eq("idCiudad", 1));
 		//Transaction tr = null;
 		List<alumno> lista = null;
@@ -106,10 +106,10 @@ public class CitaDAO {
 			if(session1.isOpen()){
 				session1.close();
 			}
-		}*/
+		}*//*
         return results;
 
-    }
+    }*/
 
 
         public Integer addCita(String Fecha, String Hora, String Servicio, int Id_Mascota){
@@ -148,6 +148,29 @@ public class CitaDAO {
         }
     }
 
+    //Actualizar datos //idCita fecha hora servicio id_Mascota
+    public void updateCita(Integer idCita, String fecha, String hora, String servicio, int id_Mascota){
+        Session session = factory.openSession();
+        Transaction tx = null;
+        try{
+            tx = session.beginTransaction();
+            Cita dao =
+                    (Cita) session.get(Cita.class, idCita);
+
+            dao.setFecha( fecha );
+            dao.setHora(hora);
+            dao.setServicio(servicio);
+            dao.setId_Mascota(id_Mascota);
+
+            session.update(dao);
+            tx.commit();
+        }catch (HibernateException e) {
+            if (tx!=null) tx.rollback();
+            e.printStackTrace();
+        }finally {
+            session.close();
+        }
+    }
 
 }
 

@@ -6,7 +6,7 @@ import javax.persistence.*;
 @Entity
 @Table(name = "cita")
 public class Cita {
-
+//idCita fecha hora servicio id_Mascota
     @Id
     @GeneratedValue
     @Column(name = "Id_Cita")
