@@ -19,10 +19,7 @@
     <select />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="887c1e89-94f4-496c-981c-a110b7acb972" name="Default Changelist" comment="avence dueño,dueñoDAO y mascota,mascotaDAO&#10;correcion de error de tablas dueño y mascota">
-      <change afterPath="$PROJECT_DIR$/BD201241/src/sample/Vistas.fxml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-    </list>
+    <list default="true" id="887c1e89-94f4-496c-981c-a110b7acb972" name="Default Changelist" comment="avence dueño,dueñoDAO y mascota,mascotaDAO&#10;correcion de error de tablas dueño y mascota&#10;vistas de las tablas" />
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
@@ -96,7 +93,14 @@
       <option name="project" value="LOCAL" />
       <updated>1614834014031</updated>
     </task>
-    <option name="localTasksCounter" value="4" />
+    <task id="LOCAL-00004" summary="avence dueño,dueñoDAO y mascota,mascotaDAO&#10;correcion de error de tablas dueño y mascota&#10;vistas de las tablas">
+      <created>1615000952626</created>
+      <option name="number" value="00004" />
+      <option name="presentableId" value="LOCAL-00004" />
+      <option name="project" value="LOCAL" />
+      <updated>1615000952626</updated>
+    </task>
+    <option name="localTasksCounter" value="5" />
     <servers />
   </component>
   <component name="Vcs.Log.Tabs.Properties">
@@ -114,7 +118,9 @@
   <component name="VcsManagerConfiguration">
     <MESSAGE value="avence dueño,dueñoDAO y mascota,mascotaDAO" />
     <MESSAGE value="avence dueño,dueñoDAO y mascota,mascotaDAO&#10;correcion de error de tablas dueño y mascota" />
-    <option name="LAST_COMMIT_MESSAGE" value="avence dueño,dueñoDAO y mascota,mascotaDAO&#10;correcion de error de tablas dueño y mascota" />
+    <MESSAGE value="avence dueño,dueñoDAO y mascota,mascotaDAO&#10;correcion de error de tablas dueño y mascota&#10;vista de las talas" />
+    <MESSAGE value="avence dueño,dueñoDAO y mascota,mascotaDAO&#10;correcion de error de tablas dueño y mascota&#10;vistas de las tablas" />
+    <option name="LAST_COMMIT_MESSAGE" value="avence dueño,dueñoDAO y mascota,mascotaDAO&#10;correcion de error de tablas dueño y mascota&#10;vistas de las tablas" />
   </component>
   <component name="WindowStateProjectService">
     <state x="73" y="0" key="#Project_Structure" timestamp="1614784726442">
