@@ -19,16 +19,21 @@
     <select />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="887c1e89-94f4-496c-981c-a110b7acb972" name="Default Changelist" comment="avence dueño,dueñoDAO y mascota,mascotaDAO">
+    <list default="true" id="887c1e89-94f4-496c-981c-a110b7acb972" name="Default Changelist" comment="avence dueño,dueñoDAO y mascota,mascotaDAO&#10;correcion de error de tablas dueño y mascota">
+      <change afterPath="$PROJECT_DIR$/BD201241/src/sample/Vistas.fxml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/BD201241/src/sample/Controller.java" beforeDir="false" afterPath="$PROJECT_DIR$/BD201241/src/sample/Controller.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/BD201241/src/simplehibernate/DueñoDAO.java" beforeDir="false" afterPath="$PROJECT_DIR$/BD201241/src/simplehibernate/DueñoDAO.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/BD201241/src/simplehibernate/MascotaDAO.java" beforeDir="false" afterPath="$PROJECT_DIR$/BD201241/src/simplehibernate/MascotaDAO.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
     <option name="LAST_RESOLUTION" value="IGNORE" />
+  </component>
+  <component name="FileTemplateManagerImpl">
+    <option name="RECENT_TEMPLATES">
+      <list>
+        <option value="FxmlFile" />
+      </list>
+    </option>
   </component>
   <component name="Git.Settings">
     <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
@@ -84,7 +89,14 @@
       <option name="project" value="LOCAL" />
       <updated>1614751979038</updated>
     </task>
-    <option name="localTasksCounter" value="3" />
+    <task id="LOCAL-00003" summary="avence dueño,dueñoDAO y mascota,mascotaDAO&#10;correcion de error de tablas dueño y mascota">
+      <created>1614834014031</created>
+      <option name="number" value="00003" />
+      <option name="presentableId" value="LOCAL-00003" />
+      <option name="project" value="LOCAL" />
+      <updated>1614834014031</updated>
+    </task>
+    <option name="localTasksCounter" value="4" />
     <servers />
   </component>
   <component name="Vcs.Log.Tabs.Properties">
@@ -101,7 +113,8 @@
   </component>
   <component name="VcsManagerConfiguration">
     <MESSAGE value="avence dueño,dueñoDAO y mascota,mascotaDAO" />
-    <option name="LAST_COMMIT_MESSAGE" value="avence dueño,dueñoDAO y mascota,mascotaDAO" />
+    <MESSAGE value="avence dueño,dueñoDAO y mascota,mascotaDAO&#10;correcion de error de tablas dueño y mascota" />
+    <option name="LAST_COMMIT_MESSAGE" value="avence dueño,dueñoDAO y mascota,mascotaDAO&#10;correcion de error de tablas dueño y mascota" />
   </component>
   <component name="WindowStateProjectService">
     <state x="73" y="0" key="#Project_Structure" timestamp="1614784726442">
@@ -122,34 +135,50 @@
     </state>
     <state x="460" y="139" key="FileChooserDialogImpl/0.0.1360.768@0.0.1360.768" timestamp="1614183935803" />
     <state x="319" y="15" width="649" height="554" key="FileChooserDialogImpl/0.0.1366.736@0.0.1366.736" timestamp="1614786653092" />
-    <state width="1323" height="578" key="GridCell.Tab.0.bottom" timestamp="1614833767881">
+    <state width="1323" height="226" key="GridCell.Tab.0.bottom" timestamp="1614834134944">
       <screen x="0" y="0" width="1366" height="736" />
     </state>
-    <state width="1323" height="578" key="GridCell.Tab.0.bottom/0.0.1366.736@0.0.1366.736" timestamp="1614833767881" />
-    <state width="1323" height="578" key="GridCell.Tab.0.center" timestamp="1614833767881">
+    <state width="1323" height="226" key="GridCell.Tab.0.bottom/0.0.1366.736@0.0.1366.736" timestamp="1614834134944" />
+    <state width="1323" height="226" key="GridCell.Tab.0.center" timestamp="1614834134944">
       <screen x="0" y="0" width="1366" height="736" />
     </state>
-    <state width="1323" height="578" key="GridCell.Tab.0.center/0.0.1366.736@0.0.1366.736" timestamp="1614833767881" />
-    <state width="1323" height="578" key="GridCell.Tab.0.left" timestamp="1614833767881">
+    <state width="1323" height="226" key="GridCell.Tab.0.center/0.0.1366.736@0.0.1366.736" timestamp="1614834134944" />
+    <state width="1323" height="226" key="GridCell.Tab.0.left" timestamp="1614834134944">
       <screen x="0" y="0" width="1366" height="736" />
     </state>
-    <state width="1323" height="578" key="GridCell.Tab.0.left/0.0.1366.736@0.0.1366.736" timestamp="1614833767881" />
-    <state width="1323" height="578" key="GridCell.Tab.0.right" timestamp="1614833767881">
+    <state width="1323" height="226" key="GridCell.Tab.0.left/0.0.1366.736@0.0.1366.736" timestamp="1614834134944" />
+    <state width="1323" height="226" key="GridCell.Tab.0.right" timestamp="1614834134944">
       <screen x="0" y="0" width="1366" height="736" />
     </state>
-    <state width="1323" height="578" key="GridCell.Tab.0.right/0.0.1366.736@0.0.1366.736" timestamp="1614833767881" />
+    <state width="1323" height="226" key="GridCell.Tab.0.right/0.0.1366.736@0.0.1366.736" timestamp="1614834134944" />
+    <state width="1323" height="226" key="GridCell.Tab.1.bottom" timestamp="1614834134945">
+      <screen x="0" y="0" width="1366" height="736" />
+    </state>
+    <state width="1323" height="226" key="GridCell.Tab.1.bottom/0.0.1366.736@0.0.1366.736" timestamp="1614834134945" />
+    <state width="1323" height="226" key="GridCell.Tab.1.center" timestamp="1614834134945">
+      <screen x="0" y="0" width="1366" height="736" />
+    </state>
+    <state width="1323" height="226" key="GridCell.Tab.1.center/0.0.1366.736@0.0.1366.736" timestamp="1614834134945" />
+    <state width="1323" height="226" key="GridCell.Tab.1.left" timestamp="1614834134944">
+      <screen x="0" y="0" width="1366" height="736" />
+    </state>
+    <state width="1323" height="226" key="GridCell.Tab.1.left/0.0.1366.736@0.0.1366.736" timestamp="1614834134944" />
+    <state width="1323" height="226" key="GridCell.Tab.1.right" timestamp="1614834134945">
+      <screen x="0" y="0" width="1366" height="736" />
+    </state>
+    <state width="1323" height="226" key="GridCell.Tab.1.right/0.0.1366.736@0.0.1366.736" timestamp="1614834134945" />
     <state x="163" y="0" key="SettingsEditor" timestamp="1614786656636">
       <screen x="0" y="0" width="1366" height="736" />
     </state>
     <state x="163" y="0" key="SettingsEditor/0.0.1366.736@0.0.1366.736" timestamp="1614786656636" />
-    <state x="275" y="100" key="Vcs.Push.Dialog.v2" timestamp="1614752008030">
+    <state x="275" y="100" key="Vcs.Push.Dialog.v2" timestamp="1614834024061">
       <screen x="0" y="0" width="1366" height="736" />
     </state>
-    <state x="275" y="100" key="Vcs.Push.Dialog.v2/0.0.1366.736@0.0.1366.736" timestamp="1614752008030" />
-    <state x="353" y="146" key="com.intellij.openapi.vcs.update.UpdateOrStatusOptionsDialogupdate-v2" timestamp="1614738758182">
+    <state x="275" y="100" key="Vcs.Push.Dialog.v2/0.0.1366.736@0.0.1366.736" timestamp="1614834024061" />
+    <state x="353" y="146" key="com.intellij.openapi.vcs.update.UpdateOrStatusOptionsDialogupdate-v2" timestamp="1614962558767">
       <screen x="0" y="0" width="1366" height="736" />
     </state>
-    <state x="353" y="146" key="com.intellij.openapi.vcs.update.UpdateOrStatusOptionsDialogupdate-v2/0.0.1366.736@0.0.1366.736" timestamp="1614738758182" />
+    <state x="353" y="146" key="com.intellij.openapi.vcs.update.UpdateOrStatusOptionsDialogupdate-v2/0.0.1366.736@0.0.1366.736" timestamp="1614962558767" />
     <state x="62" y="45" key="new project wizard" timestamp="1614183939255">
       <screen x="0" y="0" width="1360" height="768" />
     </state>

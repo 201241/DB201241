@@ -1,0 +1,283 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.ComboBox?>
+<?import javafx.scene.control.TableColumn?>
+<?import javafx.scene.control.TableView?>
+<?import javafx.scene.control.TextField?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.layout.Pane?>
+<?import javafx.scene.text.Font?>
+<?import javafx.scene.text.Text?>
+
+<AnchorPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="448.0" prefWidth="718.0" xmlns="http://javafx.com/javafx/11.0.1" xmlns:fx="http://javafx.com/fxml/1">
+   <children>
+      <Pane layoutX="-1.0" layoutY="-2.0" prefHeight="61.0" prefWidth="718.0">
+         <children>
+            <Button fx:id="mascotasB" layoutX="47.0" layoutY="17.0" mnemonicParsing="false" style="-fx-background-color: #096974;" text="Mascotas ">
+               <font>
+                  <Font name="Arial Black" size="15.0" />
+               </font>
+            </Button>
+            <Button fx:id="citasB" layoutX="232.0" layoutY="17.0" mnemonicParsing="false" style="-fx-background-color: #096974;" text="Citas ">
+               <font>
+                  <Font name="Arial Black" size="15.0" />
+               </font>
+            </Button>
+            <Button fx:id="dueñosB" layoutX="392.0" layoutY="17.0" mnemonicParsing="false" style="-fx-background-color: #096974;" text="Dueños ">
+               <font>
+                  <Font name="Arial Black" size="15.0" />
+               </font>
+            </Button>
+            <Button fx:id="inventarioB" layoutX="577.0" layoutY="17.0" mnemonicParsing="false" style="-fx-background-color: #096974;" text="Inventario ">
+               <font>
+                  <Font name="Arial Black" size="15.0" />
+               </font>
+            </Button>
+         </children>
+      </Pane>
+      <Pane layoutY="59.0" prefHeight="389.0" prefWidth="718.0" style="-fx-background-color: #096974;" visible="false">
+         <children>
+            <TableView fx:id="tablaM" layoutX="249.0" layoutY="28.0" prefHeight="339.0" prefWidth="449.0">
+              <columns>
+                <TableColumn prefWidth="75.0" text="Tipo" />
+                <TableColumn prefWidth="75.0" text="Nombre " />
+                  <TableColumn prefWidth="75.0" text="Dueño " />
+                  <TableColumn prefWidth="75.0" text="Caracteristicas" />
+                  <TableColumn prefWidth="75.0" text="Asistencia " />
+                  <TableColumn prefWidth="75.0" text="Fecha de ingreso" />
+              </columns>
+            </TableView>
+            <Pane layoutX="14.0" layoutY="28.0" prefHeight="339.0" prefWidth="229.0" style="-fx-background-color: #FFFFFF;">
+               <children>
+                  <Button fx:id="listo" layoutX="163.0" layoutY="300.0" mnemonicParsing="false" style="-fx-background-color: #096974;" text="Listo ">
+                     <font>
+                        <Font name="Arial Black" size="12.0" />
+                     </font>
+                  </Button>
+                  <Text fill="#2daebf" layoutX="21.0" layoutY="31.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Registrar Mascota">
+                     <font>
+                        <Font name="Bookshelf Symbol 7" size="18.0" />
+                     </font>
+                  </Text>
+                  <TextField fx:id="NombreM" layoutX="18.0" layoutY="49.0" text="Nombre">
+                     <font>
+                        <Font name="System Italic" size="12.0" />
+                     </font>
+                  </TextField>
+                  <TextField fx:id="caracteris" layoutX="18.0" layoutY="134.0" text="Caracteristica">
+                     <font>
+                        <Font name="System Italic" size="12.0" />
+                     </font>
+                  </TextField>
+                  <TextField fx:id="datosA" layoutX="18.0" layoutY="179.0" text="Datos de asistencia" />
+                  <TextField fx:id="fecha" layoutX="18.0" layoutY="221.0" text="Fecha de ingreso " />
+                  <ComboBox fx:id="seleccionD" layoutX="17.0" layoutY="262.0" prefWidth="150.0" promptText="Seleccionar Dueño " />
+                  <ComboBox fx:id="tipoM" layoutX="17.0" layoutY="92.0" prefWidth="150.0" promptText="Tipo " />
+               </children>
+            </Pane>
+         </children>
+      </Pane>
+      <Pane layoutY="59.0" prefHeight="389.0" prefWidth="718.0" style="-fx-background-color: #096974;" visible="false">
+         <children>
+            <TableView fx:id="tablaM1" layoutX="249.0" layoutY="28.0" prefHeight="339.0" prefWidth="449.0">
+               <columns>
+                  <TableColumn prefWidth="75.0" text="Tipo" />
+                  <TableColumn prefWidth="75.0" text="Nombre " />
+                  <TableColumn prefWidth="75.0" text="Dueño " />
+                  <TableColumn prefWidth="75.0" text="Caracteristicas" />
+                  <TableColumn prefWidth="75.0" text="Asistencia " />
+                  <TableColumn prefWidth="75.0" text="Fecha de ingreso" />
+               </columns>
+            </TableView>
+            <Pane layoutX="14.0" layoutY="28.0" prefHeight="339.0" prefWidth="229.0" style="-fx-background-color: #FFFFFF;">
+               <children>
+                  <Button fx:id="listo1" layoutX="163.0" layoutY="300.0" mnemonicParsing="false" style="-fx-background-color: #096974;" text="Listo ">
+                     <font>
+                        <Font name="Arial Black" size="12.0" />
+                     </font>
+                  </Button>
+                  <Text fill="#2daebf" layoutX="8.0" layoutY="31.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Actualizar registro Mascota">
+                     <font>
+                        <Font name="Bookshelf Symbol 7" size="18.0" />
+                     </font>
+                  </Text>
+                  <TextField fx:id="NombreM1" layoutX="18.0" layoutY="49.0" text="Nombre">
+                     <font>
+                        <Font name="System Italic" size="12.0" />
+                     </font>
+                  </TextField>
+                  <TextField fx:id="caracteris1" layoutX="18.0" layoutY="134.0" text="Caracteristica">
+                     <font>
+                        <Font name="System Italic" size="12.0" />
+                     </font>
+                  </TextField>
+                  <TextField fx:id="datosA1" layoutX="18.0" layoutY="179.0" text="Datos de asistencia" />
+                  <TextField fx:id="fecha1" layoutX="18.0" layoutY="221.0" text="Fecha de ingreso " />
+                  <ComboBox fx:id="seleccionD1" layoutX="17.0" layoutY="262.0" prefWidth="150.0" promptText="Seleccionar Dueño " />
+                  <ComboBox fx:id="tipoM1" layoutX="17.0" layoutY="92.0" prefWidth="150.0" promptText="Tipo " />
+                  <Button layoutX="17.0" layoutY="300.0" mnemonicParsing="false" style="-fx-background-color: #C95555;" text="Eliminar ">
+                     <font>
+                        <Font name="Arial Black" size="12.0" />
+                     </font>
+                  </Button>
+               </children>
+            </Pane>
+         </children>
+      </Pane>
+      <Pane layoutY="65.0" prefHeight="389.0" prefWidth="718.0" style="-fx-background-color: #096974;">
+         <children>
+            <TableView fx:id="tablaM11" layoutX="249.0" layoutY="28.0" prefHeight="339.0" prefWidth="449.0">
+               <columns>
+                  <TableColumn prefWidth="75.0" text="Tipo" />
+                  <TableColumn prefWidth="75.0" text="Nombre " />
+                  <TableColumn prefWidth="75.0" text="Dueño " />
+                  <TableColumn prefWidth="75.0" text="Caracteristicas" />
+                  <TableColumn prefWidth="75.0" text="Asistencia " />
+                  <TableColumn prefWidth="75.0" text="Fecha de ingreso" />
+               </columns>
+            </TableView>
+            <Pane layoutX="14.0" layoutY="28.0" prefHeight="339.0" prefWidth="229.0" style="-fx-background-color: #FFFFFF;">
+               <children>
+                  <Button fx:id="listo11" layoutX="163.0" layoutY="300.0" mnemonicParsing="false" style="-fx-background-color: #096974;" text="Listo ">
+                     <font>
+                        <Font name="Arial Black" size="12.0" />
+                     </font>
+                  </Button>
+                  <Text fill="#2daebf" layoutX="8.0" layoutY="31.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Registrar Cita">
+                     <font>
+                        <Font name="Bookshelf Symbol 7" size="18.0" />
+                     </font>
+                  </Text>
+                  <TextField fx:id="fechaC" layoutX="18.0" layoutY="145.0" text="Fecha ">
+                     <font>
+                        <Font name="System Italic" size="12.0" />
+                     </font>
+                  </TextField>
+                  <TextField fx:id="horaC" layoutX="18.0" layoutY="187.0" text="Hora " />
+                  <ComboBox fx:id="seleccionS" layoutX="17.0" layoutY="100.0" prefWidth="150.0" promptText="Seleccionar Servicio  " />
+                  <ComboBox fx:id="seleccionM" layoutX="17.0" layoutY="53.0" prefWidth="150.0" promptText="Seleccionar Mascota " />
+               </children>
+            </Pane>
+         </children>
+      </Pane>
+      <Pane layoutY="65.0" prefHeight="389.0" prefWidth="718.0" style="-fx-background-color: #096974;" visible="false">
+         <children>
+            <TableView fx:id="tablaM111" layoutX="249.0" layoutY="28.0" prefHeight="339.0" prefWidth="449.0">
+               <columns>
+                  <TableColumn prefWidth="75.0" text="Tipo" />
+                  <TableColumn prefWidth="75.0" text="Nombre " />
+                  <TableColumn prefWidth="75.0" text="Dueño " />
+                  <TableColumn prefWidth="75.0" text="Caracteristicas" />
+                  <TableColumn prefWidth="75.0" text="Asistencia " />
+                  <TableColumn prefWidth="75.0" text="Fecha de ingreso" />
+               </columns>
+            </TableView>
+            <Pane layoutX="14.0" layoutY="28.0" prefHeight="339.0" prefWidth="229.0" style="-fx-background-color: #FFFFFF;">
+               <children>
+                  <Button fx:id="listo111" layoutX="163.0" layoutY="300.0" mnemonicParsing="false" style="-fx-background-color: #096974;" text="Listo ">
+                     <font>
+                        <Font name="Arial Black" size="12.0" />
+                     </font>
+                  </Button>
+                  <Text fill="#2daebf" layoutX="8.0" layoutY="31.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Actualizar Registro de Cita">
+                     <font>
+                        <Font name="Bookshelf Symbol 7" size="18.0" />
+                     </font>
+                  </Text>
+                  <TextField fx:id="fechaC1" layoutX="18.0" layoutY="145.0" text="Fecha ">
+                     <font>
+                        <Font name="System Italic" size="12.0" />
+                     </font>
+                  </TextField>
+                  <TextField fx:id="horaC1" layoutX="18.0" layoutY="187.0" text="Hora " />
+                  <ComboBox fx:id="seleccionS1" layoutX="17.0" layoutY="100.0" prefWidth="150.0" promptText="Seleccionar Servicio  " />
+                  <ComboBox fx:id="seleccionM1" layoutX="17.0" layoutY="53.0" prefWidth="150.0" promptText="Seleccionar Mascota " />
+                  <Button layoutX="18.0" layoutY="300.0" mnemonicParsing="false" style="-fx-background-color: #C95555;" text="Eliminar" />
+               </children>
+            </Pane>
+         </children>
+      </Pane>
+      <Pane layoutY="59.0" prefHeight="389.0" prefWidth="718.0" style="-fx-background-color: #096974;" visible="false">
+         <children>
+            <TableView fx:id="tablaM1111" layoutX="249.0" layoutY="28.0" prefHeight="339.0" prefWidth="449.0">
+               <columns>
+                  <TableColumn prefWidth="75.0" text="Tipo" />
+                  <TableColumn prefWidth="75.0" text="Nombre " />
+                  <TableColumn prefWidth="75.0" text="Dueño " />
+                  <TableColumn prefWidth="75.0" text="Caracteristicas" />
+                  <TableColumn prefWidth="75.0" text="Asistencia " />
+                  <TableColumn prefWidth="75.0" text="Fecha de ingreso" />
+               </columns>
+            </TableView>
+            <Pane layoutX="14.0" layoutY="28.0" prefHeight="339.0" prefWidth="229.0" style="-fx-background-color: #FFFFFF;">
+               <children>
+                  <Button fx:id="listo1111" layoutX="163.0" layoutY="300.0" mnemonicParsing="false" style="-fx-background-color: #096974;" text="Listo ">
+                     <font>
+                        <Font name="Arial Black" size="12.0" />
+                     </font>
+                  </Button>
+                  <Text fill="#2daebf" layoutX="8.0" layoutY="31.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Registrar Dueño">
+                     <font>
+                        <Font name="Bookshelf Symbol 7" size="18.0" />
+                     </font>
+                  </Text>
+                  <TextField fx:id="nombreD" layoutX="18.0" layoutY="56.0" text="Nombre">
+                     <font>
+                        <Font name="System Italic" size="12.0" />
+                     </font>
+                  </TextField>
+                  <TextField fx:id="direccionD" layoutX="17.0" layoutY="96.0" text="Direccion ">
+                     <font>
+                        <Font name="System Italic" size="12.0" />
+                     </font>
+                  </TextField>
+                  <TextField fx:id="delD" layoutX="17.0" layoutY="136.0" text="Telefono " />
+                  <Button fx:id="añadirD" layoutX="20.0" layoutY="176.0" mnemonicParsing="false" style="-fx-background-color: #096974;" text="Añadir dueño " />
+               </children>
+            </Pane>
+         </children>
+      </Pane>
+      <Pane layoutY="65.0" prefHeight="389.0" prefWidth="718.0" style="-fx-background-color: #096974;" visible="false">
+         <children>
+            <TableView fx:id="tablaM11111" layoutX="249.0" layoutY="28.0" prefHeight="339.0" prefWidth="449.0">
+               <columns>
+                  <TableColumn prefWidth="75.0" text="Tipo" />
+                  <TableColumn prefWidth="75.0" text="Nombre " />
+                  <TableColumn prefWidth="75.0" text="Dueño " />
+                  <TableColumn prefWidth="75.0" text="Caracteristicas" />
+                  <TableColumn prefWidth="75.0" text="Asistencia " />
+                  <TableColumn prefWidth="75.0" text="Fecha de ingreso" />
+               </columns>
+            </TableView>
+            <Pane layoutX="14.0" layoutY="28.0" prefHeight="339.0" prefWidth="229.0" style="-fx-background-color: #FFFFFF;">
+               <children>
+                  <Button fx:id="listo11111" layoutX="163.0" layoutY="300.0" mnemonicParsing="false" style="-fx-background-color: #096974;" text="Listo ">
+                     <font>
+                        <Font name="Arial Black" size="12.0" />
+                     </font>
+                  </Button>
+                  <Text fill="#2daebf" layoutX="8.0" layoutY="31.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Registrar Dueño">
+                     <font>
+                        <Font name="Bookshelf Symbol 7" size="18.0" />
+                     </font>
+                  </Text>
+                  <TextField fx:id="nombreD1" layoutX="18.0" layoutY="56.0" text="Nombre">
+                     <font>
+                        <Font name="System Italic" size="12.0" />
+                     </font>
+                  </TextField>
+                  <TextField fx:id="direccionD1" layoutX="17.0" layoutY="96.0" text="Direccion ">
+                     <font>
+                        <Font name="System Italic" size="12.0" />
+                     </font>
+                  </TextField>
+                  <TextField fx:id="celD" layoutX="17.0" layoutY="136.0" text="Telefono " />
+                  <Button fx:id="añadirD1" layoutX="20.0" layoutY="176.0" mnemonicParsing="false" style="-fx-background-color: #096974;" text="Añadir dueño " />
+                  <Button fx:id="eliminarD" layoutX="20.0" layoutY="300.0" mnemonicParsing="false" style="-fx-background-color: #C95555;" text="Eliminar " />
+               </children>
+            </Pane>
+         </children>
+      </Pane>
+   </children>
+</AnchorPane>
