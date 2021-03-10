@@ -112,13 +112,13 @@ public class MascotaDAO {
     }*/
 
 
-    public Integer addDueño(int idMascota, String caracteristica, String nombreMasc, String ingreso, String motivoCita, int idDueño){
+    public Integer addMascota(int idMascota,String tipo_Mascota ,String caracteristica, String nombreMasc, String ingreso, String motivoCita, int idDueño){
         Session session = factory.openSession();
         Transaction tx = null;
         Integer daoID = null;
         try{
             tx = session.beginTransaction();
-            Mascota dao3 = new Mascota(idMascota,caracteristica,nombreMasc,ingreso,motivoCita,idDueño);
+            Mascota dao3 = new Mascota(idMascota,tipo_Mascota,caracteristica,nombreMasc,ingreso,motivoCita,idDueño);
             daoID = (Integer) session.save(dao3);
             tx.commit();
         }catch (HibernateException e) {
@@ -149,7 +149,7 @@ public class MascotaDAO {
     }
 //caracteristica NombreMascota Ingreso MotivoCita IdDueño
 
-    public void updateMascota(Integer idMascota, String NombreMascota,String caracteristica, String Ingreso, String MotivoCita, int IdDueño){
+    public void updateMascota(Integer idMascota,String tipo_Mascota, String NombreMascota,String caracteristica, String Ingreso, String MotivoCita, int IdDueño){
         Session session = factory.openSession();
         Transaction tx = null;
         try{
@@ -158,6 +158,7 @@ public class MascotaDAO {
                     (Mascota) session.get(Mascota.class, idMascota);
 
             dao.setNombreMascota(NombreMascota);
+            dao.setTipo_mascota(tipo_Mascota);
             dao.setCaracteristica(caracteristica);
             dao.setIngreso(Ingreso);
             dao.setMotivoCita(MotivoCita);

@@ -23,7 +23,9 @@ public class Cita {
 
     @Column(name = "Id_Mascota")
     private int id_Mascota;
-
+    //hibernate 2.M
+    //bolsa
+    //objeto tipo mascota muchos 1
     public Cita(String Fecha, String Hora, String Servicio, int Id_Mascota){
         this.fecha=Fecha;
         this.hora=Hora;

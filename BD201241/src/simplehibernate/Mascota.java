@@ -11,7 +11,10 @@ public class Mascota {
     @GeneratedValue
     @Column(name = "Id_Mascota")
     private int IdMascota;
-//caracteristica NombreMascota Ingreso MotivoCita IdDueño
+        //caracteristica NombreMascota Ingreso MotivoCita IdDueño Tipo_mascota
+    @Column(name = "Tipo_mascota")
+    private String Tipo_mascota;
+
     @Column(name = "Caracteristica")
     private String Caracteristica;
 
@@ -26,9 +29,11 @@ public class Mascota {
 
     @Column(name = "Id_Dueño")
     private int IdDueño;
+    //bolsa
 
-    public Mascota(int idMascota, String caracteristica, String nombreMasc, String ingreso, String motivoCita, int idDueño){
+    public Mascota(int idMascota, String tipo_mascota, String caracteristica, String nombreMasc, String ingreso, String motivoCita, int idDueño){
         this.IdMascota=idMascota;
+        this.Tipo_mascota=tipo_mascota;
         this.Caracteristica=caracteristica;
         this.NombreMascota=nombreMasc;
         this.Ingreso=ingreso;
@@ -46,6 +51,14 @@ public class Mascota {
 
     public void setIdMascota(int idMascota) {
         IdMascota = idMascota;
+    }
+
+    public String getTipo_mascota() {
+        return Tipo_mascota;
+    }
+
+    public void setTipo_mascota(String tipo_mascota) {
+        Tipo_mascota = tipo_mascota;
     }
 
     public String getCaracteristica() {

@@ -3,6 +3,7 @@ package sample;
 import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
 import javafx.scene.control.Button;
+import javafx.scene.layout.Pane;
 import simplehibernate.CitaDAO;
 import simplehibernate.DueñoDAO;
 import simplehibernate.MascotaDAO;
@@ -11,6 +12,11 @@ public class Controller {
 //
     @FXML
     private Button iniciar;
+    @FXML
+    private Pane paneRegistrarMascota;
+    @FXML
+    private Pane paneActualizarMascota;
+
 
     @FXML
     void puebas(ActionEvent e){
@@ -49,5 +55,29 @@ public class Controller {
         //con.updateCita(6,"09/04","16:30","Corte de pelo", 4);
     }
 
+    @FXML
+    void VistaMascota(ActionEvent e){
+        paneRegistrarMascota.setVisible(true);
+        paneActualizarMascota.setVisible(false);
+
+    }
+    @FXML
+    void VistaActualizarMascota(ActionEvent e){
+        paneRegistrarMascota.setVisible(false);
+        paneActualizarMascota.setVisible(true);
+    }
+
+    @FXML
+    void VistaCita(ActionEvent e){
+
+    }
+    @FXML
+    void VistaDueño(ActionEvent e){
+
+    }
+    @FXML
+    void VistaInventario(ActionEvent e){
+
+    }
 
 }
