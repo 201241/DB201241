@@ -1,80 +1,95 @@
 package simplehibernate;
 
 
-import javax.persistence.*;
+import javafx.beans.property.*;
+import java.io.Serializable;
 
-@Entity
-@Table(name = "cita")
-public class Cita {
-//idCita fecha hora servicio id_Mascota
-    @Id
-    @GeneratedValue
-    @Column(name = "Id_Cita")
-    private int idCita;
-
-    @Column(name = "Fecha")
-    private String fecha;
-
-    @Column(name = "Hora")
-    private String hora;
-
-    @Column(name = "Servicio")
-    private String servicio;
-
-    @Column(name = "Id_Mascota")
-    private int id_Mascota;
+public class Cita implements Serializable{
+    private  final IntegerProperty idCita = new SimpleIntegerProperty();
+    private final StringProperty fecha = new SimpleStringProperty();
+    private final StringProperty hora = new SimpleStringProperty();
+    private final StringProperty servicio = new SimpleStringProperty();
+    private final IntegerProperty Id_Mascota = new SimpleIntegerProperty();
+    private Cita cita;
     //hibernate 2.M
     //bolsa
     //objeto tipo mascota muchos 1
-    public Cita(String Fecha, String Hora, String Servicio, int Id_Mascota){
-        this.fecha=Fecha;
-        this.hora=Hora;
-        this.servicio=Servicio;
-        this.id_Mascota=Id_Mascota;
+    public Cita(Integer idCita,String Fecha, String Hora, String Servicio, Integer Id_Mascota){
+        this.idCita.set(idCita);
+        this.fecha.set(Fecha);
+        this.hora.set(Hora);
+        this.servicio.set(Servicio);
+        this.Id_Mascota.set(Id_Mascota);
 
     }
+    public Cita (){ }
 
-    public Cita() {
-
-    }
 
     public int getIdCita() {
+        return idCita.get();
+    }
+
+    public IntegerProperty idCitaProperty() {
         return idCita;
     }
 
-    public void setIdCita(int idCita) {
-        this.idCita = idCita;
+    public void setIdCita(Integer idCita) {
+        this.idCita.set(idCita);
     }
 
     public String getFecha() {
+        return fecha.get();
+    }
+
+    public StringProperty fechaProperty() {
         return fecha;
     }
 
     public void setFecha(String fecha) {
-        this.fecha = fecha;
+        this.fecha.set(fecha);
     }
 
     public String getHora() {
+        return hora.get();
+    }
+
+    public StringProperty horaProperty() {
         return hora;
     }
 
     public void setHora(String hora) {
-        this.hora = hora;
+        this.hora.set(hora);
     }
 
     public String getServicio() {
+        return servicio.get();
+    }
+
+    public StringProperty servicioProperty() {
         return servicio;
     }
 
     public void setServicio(String servicio) {
-        this.servicio = servicio;
+        this.servicio.set(servicio);
     }
 
     public int getId_Mascota() {
-        return id_Mascota;
+        return Id_Mascota.get();
     }
 
-    public void setId_Mascota(int id_Mascota) {
-        this.id_Mascota = id_Mascota;
+    public IntegerProperty id_MascotaProperty() {
+        return Id_Mascota;
+    }
+
+    public void setId_Mascota(Integer id_Mascota) {
+        this.Id_Mascota.set(id_Mascota);
+    }
+
+    public Cita getCita() {
+        return cita;
+    }
+
+    public void setCita(Cita cita) {
+        this.cita = cita;
     }
 }

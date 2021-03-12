@@ -2,10 +2,15 @@ package simplehibernate;
 
 import org.hibernate.*;
 import org.hibernate.cfg.Configuration;
+import org.hibernate.criterion.ProjectionList;
+import org.hibernate.criterion.Projections;
 import org.hibernate.criterion.Restrictions;
 import org.hibernate.service.ServiceRegistry;
 import org.hibernate.service.ServiceRegistryBuilder;
+import org.hibernate.transform.AliasToBeanResultTransformer;
 
+import java.util.ArrayList;
+import java.util.Iterator;
 import java.util.List;
 ///
 public class MascotaDAO {
@@ -44,20 +49,23 @@ public class MascotaDAO {
         Session session1 = factory.openSession();
         Criteria criter = session1.createCriteria(Mascota.class);
         //Transaction tr = null;
-        List<Mascota>lista3 = null;
+        List<Mascota> mascota = new ArrayList<>();
         try{
-            System.out.println("Conectado a base de datos...");
-            //session1 = getSession().openSession();
-            //tr = session1.beginTransaction();
-            //tr.setTimeout(2);
-            //lista = session1.createCriteria(alumno.class).list();
-            lista3 = criter.list();
-            for(Mascota mascota: lista3){
-                System.out.print("  Caracteristicas: "+mascota.getCaracteristica());
-                System.out.print("  NombreMascota: "+mascota.getNombreMascota());
-                System.out.print("  Ingreso: "+mascota.getIngreso());
-                System.out.print("  Motivo de cita: "+mascota.getMotivoCita());
-                System.out.println("");
+            ProjectionList listMascota = Projections.projectionList();
+            listMascota.add(Projections.property("IdMascota"), "IdMascota");
+            listMascota.add(Projections.property("Nombre_Mascota"), "Nombre_Mascota");
+            listMascota.add(Projections.property("Ingreso"), "Ingreso");
+            listMascota.add(Projections.property("motivo_Cita"), "motivo_Cita");
+            listMascota.add(Projections.property("IdDueño"), "IdDueño");
+
+            criter.setProjection(listMascota);
+
+            List<Mascota> mascotas = criter.setResultTransformer(new AliasToBeanResultTransformer(Mascota.class)).list();
+
+            int i =0;
+            for(Iterator iterator = mascotas.iterator(); iterator.hasNext();){
+                mascota.add((Mascota) iterator.next());
+                i++;
             }
         } catch (Exception e){
             e.printStackTrace();
@@ -66,7 +74,7 @@ public class MascotaDAO {
                 session1.close();
             }
         }
-        return lista3;
+        return mascota;
     }
 
 /*    public List<Mascota> Buscar(int ciudad){
@@ -112,13 +120,13 @@ public class MascotaDAO {
     }*/
 
 
-    public Integer addMascota(int idMascota,String tipo_Mascota ,String caracteristica, String nombreMasc, String ingreso, String motivoCita, int idDueño){
+    public Integer addMascota(int idMascota ,String caracteristica, String nombreMasc, String ingreso, String motivoCita, int idDueño){
         Session session = factory.openSession();
         Transaction tx = null;
         Integer daoID = null;
         try{
             tx = session.beginTransaction();
-            Mascota dao3 = new Mascota(idMascota,tipo_Mascota,caracteristica,nombreMasc,ingreso,motivoCita,idDueño);
+            Mascota dao3 = new Mascota(idMascota,caracteristica,nombreMasc,ingreso,motivoCita,idDueño);
             daoID = (Integer) session.save(dao3);
             tx.commit();
         }catch (HibernateException e) {
@@ -138,7 +146,7 @@ public class MascotaDAO {
             tx3 = session.beginTransaction();
             Mascota dao3 =
                     (Mascota) session.get(Mascota.class, idMascota);
-            ((org.hibernate.Session) session).delete(dao3);
+            ((Session) session).delete(dao3);
             tx3.commit();
         }catch (HibernateException e) {
             if (tx3!=null) tx3.rollback();
@@ -157,11 +165,10 @@ public class MascotaDAO {
             Mascota dao =
                     (Mascota) session.get(Mascota.class, idMascota);
 
-            dao.setNombreMascota(NombreMascota);
-            dao.setTipo_mascota(tipo_Mascota);
+            dao.setNombre_Mascota(NombreMascota);
             dao.setCaracteristica(caracteristica);
             dao.setIngreso(Ingreso);
-            dao.setMotivoCita(MotivoCita);
+            dao.setMotivo_Cita(MotivoCita);
             dao.setIdDueño(IdDueño);
 
             session.update(dao);

@@ -2,10 +2,15 @@ package simplehibernate;
 
 import org.hibernate.*;
 import org.hibernate.cfg.Configuration;
+import org.hibernate.criterion.ProjectionList;
+import org.hibernate.criterion.Projections;
 import org.hibernate.criterion.Restrictions;
 import org.hibernate.service.ServiceRegistry;
 import org.hibernate.service.ServiceRegistryBuilder;
+import org.hibernate.transform.AliasToBeanResultTransformer;
 
+import java.util.ArrayList;
+import java.util.Iterator;
 import java.util.List;
 //
 public class DueñoDAO {
@@ -40,24 +45,35 @@ public class DueñoDAO {
             this.session = new Configuration().configure().buildSessionFactory();
         }
 
-        public List<Dueño>Listado2(){
+        public List<Dueño> Listado2(){
             Session session1 = factory.openSession();
             Criteria criter = session1.createCriteria(Dueño.class);
             //Transaction tr = null;
-            List<Dueño> lista2 = null;
+            List<Dueño> dueño = new ArrayList<>();
             try{
                 System.out.println("Conectado a base de datos...");
+
+                ProjectionList listaDeños = Projections.projectionList();
+                listaDeños.add(Projections.property("Id_Dueño"), "Id_Dueño");
+                listaDeños.add(Projections.property("Nombre_Dueño"), "Nombre_Dueño");
+                listaDeños.add(Projections.property("Direccion"), "Direccion");
+                listaDeños.add(Projections.property("Num_Telefono"), "Num_Telefono");
+                criter.setProjection(listaDeños);
+
+
+
+                List<Dueño> dueñoList = criter.setResultTransformer(new AliasToBeanResultTransformer(Dueño.class)).list();
+
+                int i =0;
+                for(Iterator iterator = dueñoList.iterator(); iterator.hasNext();){
+                    dueño.add((Dueño) iterator.next());
+                    System.out.print(dueño.get(i).getNum_Telefono());
+                    i++;
+                }
                 //session1 = getSession().openSession();
                 //tr = session1.beginTransaction();
                 //tr.setTimeout(2);
                 //lista = session1.createCriteria(alumno.class).list();
-                lista2 = criter.list();
-                for(Dueño dueño: lista2){
-                    System.out.print("  Nombre del dueño: "+dueño.getNombreDueño());
-                    System.out.print("  DireccionD: "+dueño.getDireccion());
-                    System.out.print("  Num_Telefono: "+dueño.getNumTel());
-                    System.out.println("");
-                }
             } catch (Exception e){
                 e.printStackTrace();
             } finally {
@@ -65,7 +81,7 @@ public class DueñoDAO {
                     session1.close();
                 }
             }
-            return lista2;
+            return dueño;
         }
 
 /*        public List<Dueño> Buscar(int ciudad){
@@ -137,7 +153,7 @@ public class DueñoDAO {
                 tx2 = session.beginTransaction();
                 Dueño dao2 =
                         (Dueño)session.get(Dueño.class, idDueño);
-                ((org.hibernate.Session) session).delete(dao2);
+                ((Session) session).delete(dao2);
                 tx2.commit();
             }catch (HibernateException e) {
                 if (tx2!=null) tx2.rollback();
@@ -155,8 +171,8 @@ public class DueñoDAO {
             Dueño dao =
                     (Dueño) session.get(Dueño.class, idDueño);
 
-            dao.setNombreDueño(nombre);
-            dao.setNumTel(telefono);
+            dao.setNombre_Dueño(nombre);
+            dao.setNum_Telefono(telefono);
             dao.setDireccion(direccion);
 
             session.update(dao);

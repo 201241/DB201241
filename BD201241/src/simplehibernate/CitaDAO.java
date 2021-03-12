@@ -2,10 +2,15 @@ package simplehibernate;
 //
 import org.hibernate.*;
 import org.hibernate.cfg.Configuration;
+import org.hibernate.criterion.ProjectionList;
+import org.hibernate.criterion.Projections;
 import org.hibernate.criterion.Restrictions;
 import org.hibernate.service.ServiceRegistry;
 import org.hibernate.service.ServiceRegistryBuilder;
+import org.hibernate.transform.AliasToBeanResultTransformer;
 
+import java.util.ArrayList;
+import java.util.Iterator;
 import java.util.List;
 
 public class CitaDAO {
@@ -41,23 +46,26 @@ public class CitaDAO {
         this.session = new Configuration().configure().buildSessionFactory();
     }
 
-        public List<Cita> Listado(){
+    public List<Cita> Listado(){
         Session session1 = factory.openSession();
         Criteria criter = session1.createCriteria(Cita.class);
         //Transaction tr = null;
-        List<Cita> lista = null;
+        List<Cita> cita = new ArrayList<>();
         try{
-            System.out.println("Conectado a base de datos...");
-            //session1 = getSession().openSession();
-            //tr = session1.beginTransaction();
-            //tr.setTimeout(2);
-            //lista = session1.createCriteria(alumno.class).list();
-            lista = criter.list();
-            for(Cita cita: lista){
-                System.out.print("  Fecha: "+cita.getFecha());
-                System.out.print("  Hora: "+cita.getHora());
-                System.out.print("  Servicio: "+cita.getServicio());
-                System.out.println("");
+            ProjectionList listCita = Projections.projectionList();
+            listCita.add(Projections.property("IdCita"), "IdCita");
+            listCita.add(Projections.property("Fecha"), "Fecha");
+            listCita.add(Projections.property("Hora"), "Hora");
+            listCita.add(Projections.property("Servicio"), "Servicio");
+            listCita.add(Projections.property("id_Mascota"), "id_Mascota");
+            criter.setProjection(listCita);
+
+            List<Cita> citas = criter.setResultTransformer(new AliasToBeanResultTransformer(Cita.class)).list();
+
+            int i =0;
+            for(Iterator iterator = citas.iterator(); iterator.hasNext();){
+                cita.add((Cita) iterator.next());
+                i++;
             }
         } catch (Exception e){
             e.printStackTrace();
@@ -66,7 +74,7 @@ public class CitaDAO {
                 session1.close();
             }
         }
-        return lista;
+        return cita;
     }
 
 /*        public List<Cita> Buscar(int ciudad){
@@ -112,13 +120,13 @@ public class CitaDAO {
     }*/
 
 
-        public Integer addCita(String Fecha, String Hora, String Servicio, int Id_Mascota){
+        public Integer addCita(int idCita,String Fecha, String Hora, String Servicio, int Id_Mascota){
         Session session = factory.openSession();
         Transaction tx = null;
         Integer daoID = null;
         try{
             tx = session.beginTransaction();
-            Cita dao = new Cita(Fecha, Hora, Servicio, Id_Mascota);
+            Cita dao = new Cita(idCita,Fecha, Hora, Servicio, Id_Mascota);
             daoID = (Integer) session.save(dao);
             tx.commit();
         }catch (HibernateException e) {
@@ -138,7 +146,7 @@ public class CitaDAO {
             tx = session.beginTransaction();
             Cita dao =
                     (Cita)session.get(Cita.class, idCita);
-            ((org.hibernate.Session) session).delete(dao);
+            ((Session) session).delete(dao);
             tx.commit();
         }catch (HibernateException e) {
             if (tx!=null) tx.rollback();

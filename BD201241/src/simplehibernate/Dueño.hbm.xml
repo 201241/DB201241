@@ -1,0 +1,21 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE hibernate-mapping PUBLIC "-//Hibernate/Hibernate Mapping DTD 3.0//EN" "http://www.hibernate.org/dtd/hibernate-mapping-3.0.dtd">
+<hibernate-mapping package="simplehibernate">
+    <class dynamic-insert="true"
+           dynamic-update="true" name="Dueño" table="Dueño">
+        <id name="Id_Dueño"
+            column="Id_Dueño"
+            type="java.lang.Integer"
+            unsaved-value="null" >
+            <generator class="native">
+            </generator>
+        </id>
+        <property name="Nombre_Dueño" column="Nombre_Dueño" />
+        <property name="Direccion" column="Direccion" />
+        <property name="Num_Telefono" column="Num_Telefono" />
+
+        <many-to-one name="Dueño" class="Dueño" fetch="select">
+            <column name="id_Dueño" not-null="true" />
+        </many-to-one>
+    </class>
+</hibernate-mapping>
